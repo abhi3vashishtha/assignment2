@@ -1,0 +1,32 @@
+ 
+namespace Clientmessage;
+ 
+enum ClientType:byte {Person, Group}
+
+enum Gender:byte {Male, Female}
+
+table Person {
+	name:string;
+	age:byte;
+	weight:float;
+	gender:Gender;
+}
+
+table Group {
+	group_name:string;
+	avg_age:float;
+	avg_weight:float;
+	names:[string];
+}
+
+table Client{
+	client_type:ClientType;
+	person:Person;
+	group:Group;
+}
+
+table ClientCollection{
+	clients:[Client];
+}
+
+root_type ClientCollection;
